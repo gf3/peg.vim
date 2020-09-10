@@ -7,7 +7,8 @@ if exists("b:current_syntax")
   finish
 endif
 
-syn match   pegRuleIdentifier   /^\a\+/ skipwhite nextgroup=pegSeperator
+syn match   pegRuleIdentifier   /^\<[a-zA-Z_][a-zA-Z_0-9]*\>/ skipwhite nextgroup=pegSeperator
+syn match   contnIdentifier      /^\s\+\// skipwhite nextgroup=pegExpression
 
 syn match   pegSeperator        "<-" skipwhite contained nextgroup=pegExpression
 syn match   pegSeperator        "←" skipwhite contained nextgroup=pegExpression
